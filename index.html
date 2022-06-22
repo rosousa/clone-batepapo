@@ -10,13 +10,27 @@
 </head>
 <body>
     
-
     <header>
         <img src="./assets/uol-logo.png" alt="Bate papo UOL logo">
         <ion-icon name="people"></ion-icon>
     </header>
 
-    <main></main>
+    <main>
+        <ul class="messages">
+            <li class="message in-and-out">
+                <span>(09:21:45)</span> <strong>João</strong> entra na sala...
+            </li>
+            <li class="message">
+                <span>(09:22:28)</span> <strong>João</strong> para <strong>Todos</strong>: Bom dia
+            </li>
+            <li class="message whisper">
+                <span>(09:22:48)</span> <strong>João</strong> reservadamente para <strong>Maria</strong>: Oi gatinha quer tc?
+            </li>
+            <li class="message in-and-out">
+                <span>(09:22:58)</span> <strong>Maria</strong> sai da sala...
+            </li>
+        </ul>
+    </main>
 
     <div class="chat-box">
         <textarea name="user-input" cols="10" rows="10" placeholder="Digite aqui..."></textarea>
@@ -24,6 +38,7 @@
     </div>
 
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/script.js"></script>
 </body>
 </html>
