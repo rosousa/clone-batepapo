@@ -1,89 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 * {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #252A2F;
-    width: 100%;
-    max-width: 428px;
-    margin: 0 auto;
+  background-color: #fdd1ff;
+  width: 100%;
+  max-width: 428px;
+  margin: 0 auto;
 }
 
 span {
-    color: rgb(168, 168, 168);
+  color: rgb(168, 168, 168);
 }
 
 header {
-    background-color: #ffffff;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header > ion-icon {
-    font-size: 3.75rem;
+  font-size: 3.75rem;
 }
 
-header > ion-icon, img {
-    padding: 0 10px;
+header > ion-icon,
+img {
+  padding: 0 10px;
 }
 
 main {
-    background-color: #ffffff;
-    width: 100%;
-    height: 530px;
-    overflow-y: scroll;
-    margin-top: 10px;
+  background-color: #ffffff;
+  width: 100%;
+  height: 600px;
+  overflow-y: scroll;
+  margin-top: 10px;
 }
 
 .chat-box {
-    width: 100%;
-    background-color: #ffffff;
-    height: 100px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  height: 124px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .chat-box > textarea {
-    height: 100px;
-    width: 80%;
-    border: 0;
-    resize: none;
-    font-family: sans-serif;
-    font-size: 1.25rem;
-    outline: none;
-    box-shadow: none;
+  height: 100px;
+  width: 80%;
+  border: 0;
+  resize: none;
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  outline: none;
+  box-shadow: none;
+}
+
+textarea::placeholder {
+  font-size: 1.25rem;
 }
 
 .chat-btn {
-    font-size: 2.5rem;
-    margin-right: 25px;
+  font-size: 2.5rem;
+  margin-right: 25px;
+  cursor: pointer;
 }
 
 .messages {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin: 5px 0;
+  word-wrap: break-word;
 }
 
 .message {
-    font-size: 1.1rem;
-    padding: 20px 0 20px 10px;
+  font-size: 1.1rem;
+  padding: 20px 0 20px 10px;
 }
 
 .in-and-out {
-    background-color: #DCDCDC;
+  background-color: #dcdcdc;
 }
 
 .whisper {
-    background-color: #FFDEDE;
+  background-color: #ffdede;
 }
