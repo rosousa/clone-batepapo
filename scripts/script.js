@@ -1,5 +1,5 @@
 let name_user;
-
+let toUser;
 function checkName() {
   const url = 'https://mock-api.driven.com.br/api/v6/uol/participants';
   const user_name = {
@@ -80,6 +80,7 @@ function filterMessages(value) {
                             <span>(${value.time})</span> <strong>${value.from}</strong> reservadamente para <strong>${value.to}</strong>: ${value.text}
                         </li>`;
   }
+  ul.scrollIntoView(false);
 }
 
 function sendMessage() {
@@ -112,3 +113,50 @@ function sendMessage() {
       text.value = '';
     });
 }
+
+function userOnline() {
+  const ul = document.querySelector('.contacts');
+  const promisse = axios.get(
+    'https://mock-api.driven.com.br/api/v6/uol/participants'
+  );
+  promisse
+    .catch((error) => {
+      console.log(error);
+    })
+    .then((res) => {
+      ul.innerHTML = '';
+      res.data.filter((i) => {
+        ul.innerHTML += `<li class="contact" onclick="selectType(this)">
+        <ion-icon name="person-circle"></ion-icon>
+        <p class="user">${i.name}</p>
+        <ion-icon class="check hidden" name="checkmark-sharp"></ion-icon>
+      </li>`;
+      });
+    });
+}
+
+function showSidebar(element) {
+  const sidebar = document.querySelector('.sidebar');
+  const sidebardark = document.querySelector('.sidebarDark');
+  const icon = document.querySelector('.showSidebar');
+  if (element === icon) {
+    sidebar.classList.add('visible');
+    sidebardark.classList.add('visible');
+  } else if (element === sidebardark) {
+    sidebar.classList.remove('visible');
+    sidebardark.classList.remove('visible');
+  }
+}
+
+function selectType(element) {
+  const el = element.querySelector('.check');
+  const text = document.querySelector('.chat-box textarea');
+  el.classList.toggle('hidden');
+  toUser = element.querySelector('p').textContent;
+  console.log(toUser, element);
+  text.value = '';
+  text.value = `/${toUser} `;
+}
+
+userOnline();
+setInterval(userOnline, 5000);

@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 * {
-  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
 
 body {
   background-color: #fdd1ff;
   width: 100%;
-  max-width: 428px;
+  max-width: 390px;
   margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 
 span {
@@ -17,6 +17,9 @@ span {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  left: 0;
   background-color: #ffffff;
   width: 100%;
   height: 100px;
@@ -34,6 +37,10 @@ img {
   padding: 0 10px;
 }
 
+.showSidebar {
+  cursor: pointer;
+}
+
 main {
   background-color: #ffffff;
   width: 100%;
@@ -43,7 +50,11 @@ main {
 }
 
 .chat-box {
-  width: 100%;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 390px;
   background-color: #ffffff;
   height: 124px;
   margin-top: 10px;
@@ -93,4 +104,104 @@ textarea::placeholder {
 
 .whisper {
   background-color: #ffdede;
+}
+
+.sidebarDark {
+  display: none;
+  background-color: #000000;
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  right: calc(50% - 195px);
+  width: 390px;
+  height: 844px;
+}
+
+.sidebar {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  right: calc(50% - 195px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 250px;
+  height: 844px;
+}
+
+.sidebar > p,
+.chooseVisibility > p {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 50px 25px 50px 25px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  width: 100%;
+  height: 350px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.todos {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-left: 25px;
+  margin-bottom: 25px;
+}
+
+.contact {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.contact > ion-icon {
+  font-size: 1.35rem;
+}
+
+.contact > .user {
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.chooseVisibility > ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.chooseVisibility > ul > li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  column-gap: 10px;
+  padding-left: 25px;
+}
+
+.chooseVisibility > ul > li > ion-icon {
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: initial !important;
 }
